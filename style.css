@@ -1,0 +1,120 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+  color: rgb(227, 220, 227);
+  text-align: center;
+  overflow-x: hidden; /* allow vertical scroll, hide horizontal */
+  min-height: 200vh; /* allow scrolling for reveal effect */
+}
+
+/* Main greeting container */
+.container-main {
+  position: relative;
+  top: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #fff;
+  width: fit-content;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* Read more button container */
+.container-secondary {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 100px auto 40px;
+  padding: 30px;
+  width: fit-content;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px #fff;
+  transition: all 0.6s ease-out;
+}
+
+/* Hidden by default */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  pointer-events: none;
+}
+
+/* Visible when scrolling */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Heading & Text */
+h1 {
+  font-size: 3em;
+  animation: fadeIn 2s ease-in-out;
+}
+
+p {
+  font-size: 1.5em;
+  margin-top: 20px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* Button styling */
+button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff4081;
+  color: rgb(228, 222, 231);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Confetti canvas */
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+
+#countdownBox {
+  margin-top: 150px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 15px #fff;
+}
+
+#countdown {
+  font-size: 2.5rem;
+  margin-top: 20px;
+}

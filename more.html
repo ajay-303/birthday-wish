@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>More About You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+      color: white;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px #fff;
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .emoji {
+      font-size: 50px;
+    }
+
+    .name {
+      margin-top: 10px;
+      font-size: 18px;
+      color: white;
+    }
+
+    .message-box {
+      margin-top: 40px;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #fff;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .close-btn {
+      margin-top: 10px;
+      background: #ffffff30;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .close-btn:hover {
+      background: #ffffff50;
+    }
+  </style>
+</head>
+<body>
+  <h1>Message for You 🎈</h1>
+
+  <div class="card-container">
+    <div class="card" onclick="showMessage('ida')">
+      <div class="emoji">👧</div>
+      <div class="name">Ida</div>
+    </div>
+    <div class="card" onclick="showMessage('ajay')">
+      <div class="emoji">👨‍💼</div>
+      <div class="name">Ajay</div>
+    </div>
+    <div class="card" onclick="showMessage('jeya')">
+      <div class="emoji">👨‍💼</div>
+      <div class="name">Jeya</div>
+    </div>
+  </div>
+
+  <div class="message-box" id="messageBox">
+    <p id="personalMessage"></p>
+    <button class="close-btn" onclick="hideMessage()">Close</button>
+  </div>
+
+  <script>
+    function showMessage(name) {
+      const messageBox = document.getElementById('messageBox');
+      const messageText = document.getElementById('personalMessage');
+      
+      let message = '';
+      if (name === 'ida') {
+        message = "Ida: Happiest birthday Sree 🎂 Stay blessed and be happy always 😌. Never expected our bond would be this special 🥰. Missing those days we spoke in our school corridors and made fun of everything. Even though we were from different classes, we always stood together. Missing those moments now 😐. Hoping to see you soon again. Love you lots ❤️ and once again wishing you many more happy returns of the day 🤩!";
+      } else if (name === 'ajay') {
+        message = "Ajay: The one who brings energy and joy wherever he goes!";
+      } else if (name === 'jeya') {
+        message = "Jeya: A gentle soul with the warmest heart — always caring.";
+      }
+
+      messageText.innerText = message;
+      messageBox.style.display = 'block';
+    }
+
+    function hideMessage() {
+      document.getElementById('messageBox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
